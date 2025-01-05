@@ -5,13 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">    
 </head>
 <body>
+    <header>
+        <h1>Rock, Paper, Scissors</h1>
+    </header>
     <div class="container">
         <div class="scores_ui">
-            <div class="human_socre"></div>
-            <div class="round_count"></div>
-            <div class="computer_score"></div>
+            <div class="box_title">
+                <h3>You</h3>
+                <div id="score_box" class="human_score_box"></div>
+                <div class="choice_img_h"></div>
+                <div class="user_choice_image"></div>
+            </div>
+            <div class="box_title">
+                <h3>Round</h3>
+                <div id="score_box" class="round_count_box"></div>
+                <div class="round_message"></div>
+            </div>
+            <div class="box_title">
+                <h3>Computer</h3>
+                <div id="score_box" class="computer_score_box"></div>
+                <div class="choice_img_c"></div>
+            </div>
         </div>
         <div class="choices">
             <button class="rock">Rock</button>
