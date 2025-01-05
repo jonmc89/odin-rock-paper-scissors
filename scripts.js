@@ -66,7 +66,18 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-/* Play Game for 5 rounds */
+
+const rockButton = document.querySelector('.rock');
+const paperButton = document.querySelector('.paper');
+const scissorsButton = document.querySelector('.scissors');
+
+scissorsButton.addEventListener('Click', playRound);
+paperButton.addEventListener('Click', playRound);
+scissorsButton.addEventListener('Click', playRound);
+
+
+
+/* Play Game for 5 rounds 
 function playGame() {
     for (let i = 0; i < 5; i++) {
         const humanSelection = getHumanChoice();
@@ -76,5 +87,8 @@ function playGame() {
         console.log(`Computer Score: ${computerScore}`);
     }
 }
+*/
 
+/*
 playGame();
+*/
