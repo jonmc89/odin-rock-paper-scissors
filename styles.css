@@ -7,6 +7,7 @@
 body{
     background: rgb(2,0,36);
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(56,135,142,1) 35%, rgba(0,212,255,1) 100%);
+    position: relative;
 }
 
 body, button{
@@ -104,4 +105,25 @@ button:hover{
 .choice_img_c{
     font-size: 100px;
 }
+
+.endgame_message{
+    position: absolute;
+    width:500px;
+    height: 350px;
+    background-color:#c6c6c6;
+    border: none;
+    z-index: 999;
+    text-align: center;
+    align-content: center;
+    display:none;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.endgame_text_1{
+    margin-bottom: 30px;
+}
+
 

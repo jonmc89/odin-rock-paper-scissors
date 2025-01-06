@@ -8,10 +8,14 @@ const computerScoreBox = document.querySelector('.computer_score_box');
 const roundMessageBox = document.querySelector('.round_message');
 const userChoiceImageBox = document.querySelector('.user_choice_image');
 const computerChoiceImageBox = document.querySelector('.choice_img_c');
+const endGameMessage = document.querySelector('.endgame_message');
+const endGameText = document.querySelector('.endgame_text_1');
+const playAgainButton = document.querySelector('.play_again_button');
 
 rockButton.addEventListener('click', playRound);
 paperButton.addEventListener('click', playRound);
 scissorsButton.addEventListener('click', playRound);
+playAgainButton.addEventListener('click', function() {location.reload()})
 
 let humanScore = 0;
 let computerScore = 0;
@@ -29,6 +33,16 @@ roundMessageBox.innerHTML = round_message;
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
     return choices[Math.floor(Math.random() * 3)];
+}
+
+function endGameMessagePrompt (roundCount){
+    if (roundCount >= 5) {
+        endGameMessage.style.display = 'block';
+        rockButton.style.display = 'none';
+        paperButton.style.display = 'none';
+        scissorsButton.style.display = 'none';
+
+    } 
 }
 
 /* Play a single round */
@@ -94,4 +108,18 @@ function playRound(event) {
     roundMessageBox.innerHTML = round_message;
     userChoiceImageBox.innerHTML = user_choice_image;
     computerChoiceImageBox.innerHTML = computer_choice_image;
+
+    if(humanScore > computerScore) {
+        endGameText.innerHTML = "You have won the game!"
+    } else if( humanScore < computerScore) {
+        endGameText.innerHTML = "You have lost the game!"
+    } else if( humanScore === computerScore) {
+        endGameText.innerHTML = "It's a Draw!"
+    } else {
+        endGameMessage.innerHTML = "Error"
+    }
+
+    endGameMessagePrompt(roundCount);
 }
+
+
