@@ -41,6 +41,8 @@ function endGameMessagePrompt (roundCount){
         rockButton.style.display = 'none';
         paperButton.style.display = 'none';
         scissorsButton.style.display = 'none';
+        userChoiceImageBox.style.display = 'none';
+        computerChoiceImageBox.style.display = 'none';
 
     } 
 }
@@ -111,10 +113,14 @@ function playRound(event) {
 
     if(humanScore > computerScore) {
         endGameText.innerHTML = "You have won the game!"
+        humanScoreBox.style.backgroundColor = "green"
     } else if( humanScore < computerScore) {
         endGameText.innerHTML = "You have lost the game!"
+        computerScoreBox.style.backgroundColor = "green"
     } else if( humanScore === computerScore) {
         endGameText.innerHTML = "It's a Draw!"
+        humanScoreBox.style.backgroundColor = "white"
+        computerScoreBox.style.backgroundColor = "white"
     } else {
         endGameMessage.innerHTML = "Error"
     }
